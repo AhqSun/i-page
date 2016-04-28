@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body{
+            max-width:800px;
+            margin:0 auto;
+        }
+        .margin{
+            margin-top:2em;
+        }
+    </style>
+</head>
+<body>   
+    <div class="panel panel-default margin">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group input-group">
+                        <label>pageSize:</label>
+                        <input type="number" min="1" data-bind="value:pageSize" />
+                    </div>
+                </div>
+               <div class="col-md-6"`>
+                   <div class="input-group">FF
+                       <label>searchKey:</label>
+                       <input type="text" min="1" data-bind="value:searchKey" />
+                   </div>     
+               </div>
+                
+            </div>
+               
+        </div>
+    </div>
+ <table class="table table-bordered table-striped  table-condensed text-center margin">
+    <thead>
+        <tr>         
+            <th>ch</th>
+            <th>char code</th>           
+        </tr>
+    </thead>
+    <tbody data-bind="foreach:list.pageNoFilter(pageNo,pageSize)">
+       <tr>
+           <td data-bind="text:ch"></td>
+           <td  data-bind="text:code"></td>
+       </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <i-page params="{iChange:pageNoChange,pageSize:pageSize,watch:[pageSize,searchKey]}"></i-page>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+   
+    <script>   
+        var require = {
+            paths: {
+                'json2': "/bower_components/json2/json2",
+                'knockout': "/bower_components/knockout/dist/knockout",
+                'iPage': "/js/i-page"
+            },
+            shim: {
+                'knockout': {
+                    deps: ['json2']
+                }
+            }
+        };
+
+    </script>
+
+    <script src="bower_components/requirejs/require.js" data-main="/js/index"></script>
+</body>
+</html>

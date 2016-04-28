@@ -1,0 +1,26 @@
+{
+  "name": "i-page",
+  "version": "0.0.0",
+  "description": "knockout分页组件",
+  "keywords": [
+    "pager",
+    "pagination"
+  ],
+  "authors": [
+    "sunyun"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "json2": "*",
+    "knockout": "~3.4.0",
+    "requirejs": "~2.2.0"
+  }
+}
